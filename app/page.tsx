@@ -406,7 +406,7 @@ export default function Portfolio() {
               <div className="text-center lg:text-left space-y-8 flex-1">
                 <div className="space-y-6">
                   <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-balance animate-fade-in-up professional-glow text-gradient leading-tight">
-                    Mayank Kumar Jah
+                    Mayank Kumar Jha
                   </h1>
                   <p className="text-2xl sm:text-3xl lg:text-4xl text-muted-foreground text-balance animate-fade-in-up professional-glow stagger-2 font-light">
                     Full-Stack Developer & Tech Entrepreneur
