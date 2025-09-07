@@ -129,10 +129,10 @@ export default function Portfolio() {
   ]
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/mayankkumarjah", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/mayankkumarjah", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/mayankkumarjah", label: "Twitter" },
-    { icon: Mail, href: "mailto:mayank@dreemlab.com", label: "Email" },
+    { icon: Github, href: "https://github.com/manku0", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/mayank-jha-4648b12a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" },
+    { icon: Twitter, href: "https://x.com/ShiveshRoy16?t=M-BOcXSWDU1XZLiezWVwUQ&s=09", label: "Twitter" },
+    { icon: Mail, href: "mailto:cyberspacegolive@gmail.com", label: "Email" },
   ]
 
   const skills = {
@@ -279,7 +279,7 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
-              <h1 className="text-xl font-bold text-white professional-glow">Mayank Kumar Jah</h1>
+              <h1 className="text-xl font-bold text-white professional-glow">Mayank Kumar Jha</h1>
             </div>
 
             {/* Desktop Navigation */}
@@ -409,7 +409,7 @@ export default function Portfolio() {
                     Mayank Kumar Jha
                   </h1>
                   <p className="text-2xl sm:text-3xl lg:text-4xl text-muted-foreground text-balance animate-fade-in-up professional-glow stagger-2 font-light">
-                    Full-Stack Developer & Tech Entrepreneur
+                    Full-Stack Developer & Tech Entrepreneur & Cyber Security Expert & App Devloper
                   </p>
                   <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 text-pretty animate-fade-in-up stagger-3 leading-relaxed">
                     Crafting digital experiences with modern technologies. Founder of Dreemlab, passionate about
