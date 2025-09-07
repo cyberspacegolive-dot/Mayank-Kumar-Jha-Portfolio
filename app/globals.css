@@ -1,0 +1,496 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for minimal black-and-white portfolio theme */
+  --background: oklch(0.02 0 0); /* Near-black background for professional look */
+  --foreground: oklch(0.98 0 0); /* Near-white text for better readability */
+  --card: oklch(0.08 0 0); /* Dark gray cards with subtle transparency */
+  --card-foreground: oklch(0.95 0 0); /* Light text on dark cards */
+  --popover: oklch(0.05 0 0); /* Very dark popover */
+  --popover-foreground: oklch(0.95 0 0); /* Light popover text */
+  --primary: oklch(0.95 0 0); /* Light primary for contrast */
+  --primary-foreground: oklch(0.05 0 0); /* Dark text on light primary */
+  --secondary: oklch(0.15 0 0); /* Medium dark for corporate elements */
+  --secondary-foreground: oklch(0.95 0 0); /* Light text on secondary */
+  --muted: oklch(0.12 0 0); /* Dark muted background */
+  --muted-foreground: oklch(0.65 0 0); /* Medium light muted text */
+  --accent: oklch(0.18 0 0); /* Subtle accent color */
+  --accent-foreground: oklch(0.95 0 0); /* Light text on accent */
+  --destructive: oklch(0.577 0.245 27.325); /* Red for errors */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.25 0 0); /* Subtle borders */
+  --input: oklch(0.08 0 0); /* Dark input background */
+  --ring: oklch(0.7 0 0); /* Light focus ring */
+  --chart-1: oklch(0.15 0 0); /* Dark chart colors */
+  --chart-2: oklch(0.7 0 0);
+  --chart-3: oklch(0.4 0 0);
+  --chart-4: oklch(0.6 0 0);
+  --chart-5: oklch(0.8 0 0);
+  --radius: 0.75rem; /* Slightly more rounded for modern look */
+  --sidebar: oklch(0.05 0 0); /* Very dark sidebar */
+  --sidebar-foreground: oklch(0.95 0 0); /* Light sidebar text */
+  --sidebar-primary: oklch(0.8 0 0); /* Light sidebar accent */
+  --sidebar-primary-foreground: oklch(0.05 0 0); /* Dark text on light accent */
+  --sidebar-accent: oklch(0.15 0 0); /* Dark sidebar accent */
+  --sidebar-accent-foreground: oklch(0.95 0 0); /* Light text on dark accent */
+  --sidebar-border: oklch(0.25 0 0); /* Subtle sidebar border */
+  --sidebar-ring: oklch(0.7 0 0); /* Light sidebar focus ring */
+}
+
+.dark {
+  /* Dark mode tokens for consistent theming */
+  --background: oklch(0 0 0); /* Black background in dark mode */
+  --foreground: oklch(1 0 0); /* White text in dark mode */
+  --card: oklch(0.122 0 0); /* Dark gray cards */
+  --card-foreground: oklch(1 0 0); /* White text on dark cards */
+  --popover: oklch(0.122 0 0); /* Dark popover */
+  --popover-foreground: oklch(1 0 0); /* White popover text */
+  --primary: oklch(1 0 0); /* White primary in dark mode */
+  --primary-foreground: oklch(0 0 0); /* Black text on white primary */
+  --secondary: oklch(0.269 0 0); /* Medium gray secondary */
+  --secondary-foreground: oklch(1 0 0); /* White text on secondary */
+  --muted: oklch(0.269 0 0); /* Medium gray muted */
+  --muted-foreground: oklch(0.708 0 0); /* Light gray muted text */
+  --accent: oklch(0.269 0 0); /* Medium gray accent */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.396 0.141 25.723); /* Dark red destructive */
+  --destructive-foreground: oklch(0.637 0.237 25.331); /* Light red text */
+  --border: oklch(0.269 0 0); /* Dark gray borders */
+  --input: oklch(0.269 0 0); /* Dark input background */
+  --ring: oklch(0.55 0.2 280); /* Purple focus ring */
+  --chart-1: oklch(0.488 0.243 264.376); /* Blue chart color */
+  --chart-2: oklch(0.696 0.17 162.48); /* Green chart color */
+  --chart-3: oklch(0.769 0.188 70.08); /* Yellow chart color */
+  --chart-4: oklch(0.627 0.265 303.9); /* Purple chart color */
+  --chart-5: oklch(0.645 0.246 16.439); /* Orange chart color */
+  --sidebar: oklch(0.205 0 0); /* Very dark sidebar */
+  --sidebar-foreground: oklch(1 0 0); /* White sidebar text */
+  --sidebar-primary: oklch(0.55 0.2 280); /* Purple sidebar primary */
+  --sidebar-primary-foreground: oklch(1 0 0); /* White text on sidebar primary */
+  --sidebar-accent: oklch(0.269 0 0); /* Medium gray sidebar accent */
+  --sidebar-accent-foreground: oklch(1 0 0); /* White text on sidebar accent */
+  --sidebar-border: oklch(0.269 0 0); /* Dark gray sidebar border */
+  --sidebar-ring: oklch(0.55 0.2 280); /* Purple sidebar focus ring */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Enhanced smooth scrolling and custom styles for portfolio */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  /* Advanced custom cursor effects with better performance */
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 70%, transparent 100%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    mix-blend-mode: difference;
+  }
+
+  .cursor-outline {
+    width: 32px;
+    height: 32px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(2px);
+  }
+
+  /* Enhanced transparent background utilities with better consistency */
+  .bg-transparent-white {
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .bg-transparent-black {
+    background: rgba(8, 8, 8, 0.98);
+    backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Advanced animation keyframes with better easing */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fade-in-scale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Adding new sparkle and floating animations */
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-15px) rotate(120deg);
+    }
+    66% {
+      transform: translateY(-8px) rotate(240deg);
+    }
+  }
+
+  @keyframes float-reverse {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(12px) rotate(-120deg);
+    }
+    66% {
+      transform: translateY(6px) rotate(-240deg);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  /* Enhanced animation classes with better performance */
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-fade-in-scale {
+    animation: fade-in-scale 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  /* Adding new animation classes for sparkles and floating elements */
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .animate-float-reverse {
+    animation: float-reverse 10s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 15s linear infinite;
+  }
+
+  .animate-spin-reverse {
+    animation: spin-reverse 12s linear infinite;
+  }
+
+  /* Professional hover effects with better performance */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-glow {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Enhanced stagger animation delays */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+  .stagger-6 {
+    animation-delay: 0.6s;
+  }
+  .stagger-7 {
+    animation-delay: 0.7s;
+  }
+  .stagger-8 {
+    animation-delay: 0.8s;
+  }
+
+  /* Advanced professional glow effects */
+  .professional-glow {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .professional-glow:hover {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15), 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 80px rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+  }
+
+  /* Enhanced corporate button styles with better consistency and improved contrast */
+  .corporate-button {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px) saturate(180%);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    /* Improved text contrast for accessibility */
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .corporate-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .corporate-button:hover::before {
+    left: 100%;
+  }
+
+  .corporate-button:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.1);
+    /* Enhanced hover text contrast */
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Enhanced button and link contrast fixes */
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Fix low contrast text elements */
+  a[href*="#contact"] {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  a[href*="#contact"]:hover {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* Enhanced text contrast for all interactive elements */
+  .text-muted-foreground {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  .hover\:text-primary:hover {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  /* Performance optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
