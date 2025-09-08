@@ -170,7 +170,7 @@ export default function DreemlabPage() {
     {
       name: "Mayank Kumar Jah",
       role: "Founder & CEO",
-      image: "/software-developer-headshot.png",
+      image: "/software-developer-headshot.jpg",
       bio: "Full-stack developer with 4+ years of experience leading development teams and building scalable applications.",
     },
     {
